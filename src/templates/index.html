@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predictor de diabetes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
+            background-color: #62c989;
+        }
+        form {
+            background-color: #eeeeee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(219, 205, 10, 0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #445344;
+        }
+        input[type="submit"] {
+            background-color: #ff6f61;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #e44d3a;
+        }
+        h2 {
+            color: #333;
+        }
+        h3 {
+            margin-top: 20px;
+            background-color: #b4b65f;
+            padding: 10px;
+            border-radius: 4px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2> Flask-Abel:Introduce los valores</h2>
+    
+    <form action="/" method="post">
+        <label>Pregnancies:</label>
+        <input type="number" step="any" name="val1" required><br><br>
+        <label>Glucose:</label>
+        <input type="number" step="any" name="val2" required><br><br>
+        <label>Blood Pressure:</label>
+        <input type="number" step="any" name="val3" required><br><br>
+        <label>BMI:</label>
+        <input type="number" step="any" name="val4" required><br><br>
+        <label>Diabetes Pedigree Function:</label>
+        <input type="number" step="any" name="val5" required><br><br>
+        <label>Age:</label>
+        <input type="number" step="any" name="val6" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction != None %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
