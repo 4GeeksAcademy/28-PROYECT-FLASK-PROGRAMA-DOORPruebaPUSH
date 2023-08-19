@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from pickle import load
 
 app = Flask(__name__)
-with open("../models/random_forest_classifier_default_42.sav", 'rb') as f:
+with open("../models/mod.sav", 'rb') as f:
     model = load(f)
 
 @app.route("/", methods = ["GET", "POST"])
@@ -23,5 +23,4 @@ def index():
     return render_template("index.html", prediction = prediction)
 
 
-    # URL for the Web App
-    # https://diabetes-flask.onrender.com/
+    # https://flask-diabetes-proyect-abel-c3ka.onrender.com/
